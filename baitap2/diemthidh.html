@@ -6,6 +6,45 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>
+            TÍNH ĐIỂM ĐẠI HỌC KHỐI D
+        
+    </h1>
+    <h2> Môn Toán 
+    <input type="number" style="width: 100px" id="diemtoan"> </input> </h2>
+    <h2> Môn Văn 
+    <input type="number" style="width: 100px" id="diemvan"> </input> </h2>
+    <h2> Môn Anh
+    <input type="number"style="width: 100px" id="diemanh"> </input> </h2>
+    <h2>
+        Khu vực 
+        <select id="khuvuc">
+            <option value="1">KV1</option>
+            <option value="2">KV2-NT</option>
+            <option value="3">KV2</option>
+            <option value="4">KV3</option>
+        </select>
+    </h2>
+    <button onclick="tinhdiem()">Tính điểm</button>
+    <p style="color: red;" id="phatngon"></p>
+    <script>
+        function tinhdiem() {
+            var khuvuc = Number(document.getElementById("khuvuc").value);
+            var diemtoan = Number(document.getElementById("diemtoan").value);
+            var diemvan = Number(document.getElementById("diemvan").value);
+            var diemanh = Number(document.getElementById("diemanh").value);
+            var diemtong = diemtoan + diemvan + diemanh
+            switch (khuvuc) {
+                case 1: document.getElementById("phatngon").innerHTML = "Tổng điểm ĐH khối D của bạn là " + Number(diemtong + 0.75)
+                break;
+                case 2: document.getElementById("phatngon").innerHTML = "Tổng điểm ĐH khối D của bạn là " + Number(diemtong + 0.5)
+                break;
+                case 3: document.getElementById("phatngon").innerHTML = "Tổng điểm ĐH khối D của bạn là " + Number(diemtong + 0.25)
+                break;
+                case 4: document.getElementById("phatngon").innerHTML = "Tổng điểm ĐH khối D của bạn là " +Number(diemtong + 0)
+                break;
+            }
+        }
+    </script>
 </body>
 </html>
