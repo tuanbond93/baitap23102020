@@ -6,6 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="sotiencanchuyen">
+            </td>
+            <td>
+                <select id="donvicanchuyen">
+                    <option value="23000">VNĐ</option>
+                    <option value="1">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="donvichuyensang">
+                    <option value="23000">VNĐ</option>
+                    <option value="1">USD</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="chuyendoi()">Convert</button>
+            </td>
+        </tr>
+        </table>
+        <p id="phatngon" style="color: blue;"></p>
+        <script>
+            function chuyendoi() {
+                var sotiencanchuyen = Number(document.getElementById("sotiencanchuyen").value);
+                var donvicanchuyen = Number(document.getElementById("donvicanchuyen").value);
+                var donvichuyensang = Number(document.getElementById("donvichuyensang").value);
+                var sotienchuyensang = sotiencanchuyen / donvicanchuyen * donvichuyensang;
+                document.getElementById("phatngon").innerHTML = "Result " + sotienchuyensang;
+            }
+        </script>
 </body>
 </html>
